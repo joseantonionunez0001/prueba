@@ -13,14 +13,8 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('cliente_id')
-                ->constrained('users');
-            
-            $table->foreignId('pedido_id')
-                ->constrained('pedidos');
-
-            $table->string('estado')->nullable();
+            $table->string('nombre');
+            $table->decimal('precio');
             $table->timestamps();
         });
     }
